@@ -11,9 +11,9 @@ export class ApiAdminService {
   constructor() { }
 
   async getAllUsers() {
-    return (await axios.get(`${environment.apiUrl}/admin/allUsers`)).data;
+    return (await axios.get(`${process.env.HEROKU_ECOMMERCE_API}/admin/allUsers`)).data;
   }
   async getUserByEmail(email: string) {
-    return (await axios.get(`${environment.apiUrl}/admin/${email}`)).data;
+    return (await axios.get(`${process.env.HEROKU_ECOMMERCE_API}/admin/${email}`)).data;
   }
 }
