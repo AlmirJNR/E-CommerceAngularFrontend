@@ -1,0 +1,9 @@
+.container {
+  --headerVH: 10vh;
+  --mainVH: 80vh;
+  --footerVH: 10vh;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: var(--headerVH) var(--mainVH) var(--footerVH);
+}

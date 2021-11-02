@@ -1,0 +1,63 @@
+<div class="container">
+  <div class="container-input">
+
+    <form [formGroup]="registerUserForm">
+      <div class="container-inputField" (mouseleave)="t1.show()">
+        <label for="name"><mat-icon>person</mat-icon>Nome</label>
+        <input
+        class="inputField"
+        type="text"
+        placeholder="Insira seu nome"
+        maxlength="75"
+        formControlName="userName"
+        matTooltipClass="tooltip"
+        [matTooltip]="(registerUserForm.controls.userName.invalid && !registerUserForm.controls.userName.pristine) ? 'Este campo é obrigatório' : ''"
+        #t1="matTooltip"
+        matTooltipPosition="right"/>
+      </div>
+
+      <div class="container-inputField" (mouseleave)="t2.show()">
+        <label for="email"><mat-icon>alternate_email</mat-icon>Email</label>
+        <input
+        class="inputField"
+        type="email"
+        placeholder="Insira seu email"
+        maxlength="75"
+        formControlName="userEmail"
+        matTooltipClass="tooltip"
+        [matTooltip]="(registerUserForm.controls.userEmail.invalid && !registerUserForm.controls.userEmail.pristine) ? 'Este campo é obrigatório' : ''"
+        #t2="matTooltip"
+        matTooltipPosition="right"/>
+      </div>
+
+      <div class="container-inputField" (mouseleave)="t3.show()">
+        <label for="password"><mat-icon>lock</mat-icon>Senha</label>
+        <input
+        class="inputField"
+        type="password"
+        placeholder="Insira sua senha"
+        maxlength="50"
+        formControlName="userPassword"
+        matTooltipClass="tooltip"
+        [matTooltip]="(registerUserForm.controls.userPassword.invalid && !registerUserForm.controls.userPassword.pristine) ? 'Este campo é obrigatório' : ''"
+        #t3="matTooltip"
+        matTooltipPosition="right"/>
+      </div>
+
+      <div class="container-button">
+        <button (click)="navigateToHomeModal()" class="cancelButton">
+          <mat-icon>close</mat-icon>
+          Cancelar
+        </button>
+
+        <button class="submitButton"
+        [disabled]="!(registerUserForm.controls.userName.valid && registerUserForm.controls.userEmail.valid && registerUserForm.controls.userPassword.valid)"
+        (click)="registerUser()">
+          Registrar
+          <mat-icon>check</mat-icon>
+        </button>
+      </div>
+    </form>
+
+  </div>
+</div>

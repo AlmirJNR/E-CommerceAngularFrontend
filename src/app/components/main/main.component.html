@@ -1,0 +1,9 @@
+<main>
+    <div class="digitalProducts" id="myel">
+      <app-digital-product *ngFor="let product of digitalProducts" [digitalProduct]="product"></app-digital-product>
+    </div>
+
+    <div class="physicalProducts">
+      <app-physical-product *ngFor="let product of physicalProducts" [physicalProduct]="product"></app-physical-product>
+    </div>
+</main>

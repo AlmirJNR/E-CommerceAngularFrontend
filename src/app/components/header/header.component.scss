@@ -1,0 +1,141 @@
+header {
+  --headerVH: 10vh;
+  --mainVH: 80vh;
+  --footerVH: 10vh;
+
+  // background: rgba(255, 0, 0, 0.1);
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: calc(var(--headerVH)/2) calc(var(--headerVH)/2);
+
+  justify-content: center;
+  align-items: center;
+
+  .headerlogo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgb(60, 60, 60);
+    color: white;
+
+    font-size: 1.5em;
+    font-weight: 600;
+
+    width: 100vw;
+    height: 5vh;
+
+    border-radius: 0 0 20% 20%;
+  }
+
+  .headerbuttons {
+    justify-self: center;
+    align-self: center;
+
+    background: rgb(60, 60, 60);
+
+    border-radius: 0 0 1rem 1rem;
+
+    a {
+      button {
+        outline: none;
+        border: none;
+        background: none;
+
+        padding: 0;
+        margin: 0.25rem 0.25rem 0.25rem 0.25rem;
+
+        cursor: pointer;
+
+        color: white;
+
+        height: 5vh;
+
+        background-image: url(../../../assets/whiteCircle.svg);
+        background-size: 0% 3px;
+        background-repeat: no-repeat;
+        background-position: center 30%;
+        transition: background-position 250ms;
+
+        div {
+          border: solid white;
+          border-width: 0 0 0 0;
+          // box-shadow: 0.2rem 0.2rem 0.5rem;
+          border-radius: 0.25rem;
+
+          @media only screen and (min-width: 768px) {
+            #consoles::before {
+              content: "Consoles";
+            }
+            #games::before {
+              content: "Jogos";
+            }
+            #accessories::before {
+              content: "Acessórios";
+            }
+            #login::before {
+              content: "Logar";
+            }
+            #register::before {
+              content: "Registrar";
+            }
+            #userInfo::before {
+              content: "Minha Conta";
+            }
+
+            b {
+              padding: 0 0.5rem 0 0.5rem;
+            }
+          }
+
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          mat-icon {
+            padding: 0;
+            margin: 0;
+          }
+        }
+
+        &:hover {
+          // box-shadow: 0 0 0.25rem inset;
+
+          background-size: 0.5rem 10px;
+          background-position: top;
+          transition: background-position 250ms;
+        }
+      }
+    }
+
+    @media only screen and (max-width: 767px) {
+      #consoles::before {
+        content: "";
+      }
+      #games::before {
+        content: "";
+      }
+      #accessories::before {
+        content: "";
+      }
+      #login::before {
+        content: "";
+      }
+      #register::before {
+        content: "";
+      }
+
+      b {
+        padding: 0 0.25rem 0 0.25rem;
+      }
+
+      @media only screen and (max-width: 317px) {
+
+        b {
+          padding: 0 0.05rem 0 0.05rem;
+        }
+      }
+    }
+  }
+}

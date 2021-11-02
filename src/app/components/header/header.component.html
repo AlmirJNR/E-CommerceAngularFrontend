@@ -1,0 +1,56 @@
+<header>
+  <div class="headerlogo">
+    E-COMMERCE
+  </div>
+
+  <div class="headerbuttons">
+    <a routerLink="/consoles">
+      <button matTooltip="Consoles" matTooltipPosition="below" matTooltipClass="tooltip">
+        <div>
+          <b id="consoles"></b>
+          <mat-icon>videogame_asset</mat-icon>
+        </div>
+      </button>
+    </a>
+    <a routerLink="/games">
+      <button matTooltip="Jogos" matTooltipPosition="below" matTooltipClass="tooltip">
+        <div>
+          <b id="games"></b>
+          <mat-icon>games</mat-icon>
+        </div>
+      </button>
+    </a>
+    <a routerLink="/accessories">
+      <button matTooltip="Acessórios" matTooltipPosition="below" matTooltipClass="tooltip">
+        <div>
+          <b id="accessories"></b>
+          <mat-icon>devices_other</mat-icon>
+        </div>
+      </button>
+    </a>
+    <a *ngIf="!userIsLogged" routerLink="/login">
+      <button matTooltip="Logar" matTooltipPosition="below" matTooltipClass="tooltip">
+        <div>
+          <b id="login"></b>
+          <mat-icon>forward</mat-icon>
+        </div>
+      </button>
+    </a>
+    <a *ngIf="!userIsLogged" routerLink="/register">
+      <button matTooltip="Registrar" matTooltipPosition="below" matTooltipClass="tooltip">
+        <div>
+          <b id="register"></b>
+          <mat-icon>how_to_reg</mat-icon>
+        </div>
+      </button>
+    </a>
+    <a *ngIf="userIsLogged" routerLink="/userInfo">
+      <button matTooltip="Minha Conta" matTooltipPosition="below" matTooltipClass="tooltip">
+        <div>
+          <b id="userInfo"></b>
+          <mat-icon>account_circle</mat-icon>
+        </div>
+      </button>
+    </a>
+  </div>
+</header>

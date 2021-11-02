@@ -1,0 +1,139 @@
+.container {
+  // border: 1px solid red;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  height: 100vh;
+
+  font-weight: 600;
+
+  .container-input {
+    // border: 1px solid red;
+
+    display: flex;
+    flex-direction: column;
+
+    form {
+      div {
+        label {
+          display: flex;
+          flex-direction: row;
+          justify-content: flex-start;
+          align-items: center;
+        }
+      }
+    }
+
+    .container-inputField {
+      display: flex;
+      flex-direction: column;
+
+      margin: 0 0 1rem 0;
+
+      .inputField {
+        border: none;
+        border-radius: 0 1rem 1rem 1rem;
+
+        padding: 0.5rem;
+
+        box-shadow: 0.25rem 0.25rem 0.5rem;
+
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+  }
+
+  .container-button {
+    // border: 1px solid red;
+    border: none;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+
+    margin-top: 1rem;
+
+    a {
+      text-decoration: none;
+    }
+
+    .cancelButton {
+      cursor: pointer;
+
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+
+      border: none;
+      border-radius: 5rem;
+
+      padding: 0.5rem;
+      margin-right: 0.5rem;
+
+      box-shadow: 0.25rem 0.25rem 0.5rem;
+
+      background: lightgrey;
+      background-color: rgba(128, 0, 0, 0.5);
+
+      color: black;
+
+      font-weight: 600;
+
+      &:hover {
+        box-shadow: 0.25rem 0.25rem 0.5rem inset;
+      }
+
+      .cancelButtonLink {
+        text-decoration: none;
+
+        &:hover {
+          color: white;
+        }
+        &:visited {
+          color: black;
+        }
+        &:active {
+          color: black;
+        }
+      }
+    }
+
+    .submitButton {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+
+      border: none;
+      border-radius: 5rem;
+
+      padding: 0.5rem;
+      margin-left: 0.5rem;
+
+      box-shadow: 0.25rem 0.25rem 0.5rem;
+
+      font-weight: 600;
+
+      background-color: rgba(0, 128, 0, 0.5);
+
+      &:hover:enabled {
+        cursor: pointer;
+        box-shadow: 0.25rem 0.25rem 0.5rem inset;
+      }
+
+      &[disabled] {
+        cursor: not-allowed;
+        background-color: rgba(210, 210, 210, 0.5);
+        box-shadow: 0.25rem 0.25rem 0.5rem inset;
+      }
+    }
+
+  }
+}

@@ -1,0 +1,28 @@
+<div class="container"
+matTooltip="{{physicalProduct.nome}} {{physicalProduct.descricao}}"
+matTooltipPosition="above"
+matTooltipClass="tooltip">
+  <img
+  width="100%"
+  style="aspect-ratio: 12/16;"
+  src="{{physicalProduct.imagem}}"
+  alt="">
+
+  <div class="description">
+
+    <span class="descriptionShortner" style="font-weight: 400; font-size: 0.75em;">
+      {{physicalProduct.nome}}<br>
+      <span class="descriptionShortner">
+        {{physicalProduct.descricao}}
+      </span>
+    </span>
+
+    <span style="font-weight: 600; font-size: 1.1em;">
+      <span style="color: rgb(84, 180, 84);">R$ </span>{{physicalProduct.preco | number: "1.2-2"}}
+    </span>
+
+    <span style="font-weight: 400; font-size: 0.75em;">
+      Unidades: <b>{{physicalProduct.quantidade}}</b>
+    </span>
+  </div>
+</div>

@@ -1,0 +1,43 @@
+div {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 1rem;
+
+  width: 10rem;
+
+  cursor: pointer;
+
+  img {
+    border-radius: 0.5rem;
+    box-shadow: 0.5rem 0.5rem 0.5rem;
+    transition: 250ms;
+
+    &:hover {
+      box-shadow: 0 0 0;
+      // box-shadow: 0 0 0;
+      transition: 250ms;
+    }
+
+    @media only screen and (max-width: 300px) {
+      &:hover{
+        box-shadow: 0 0 0;
+      }
+    }
+  }
+
+  background-image: linear-gradient(90deg, black, black);
+  background-size: 0% 5px;
+  background-repeat: no-repeat;
+  background-position: top;
+  transition: background-size 250ms;
+
+  &:hover {
+    background-size: 50% 5px;
+    background-position: top;
+    transition: background-size 250ms;
+  }
+}
