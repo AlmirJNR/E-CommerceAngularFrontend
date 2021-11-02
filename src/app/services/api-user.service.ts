@@ -12,7 +12,7 @@ export class ApiUserService {
 
   async setNewUser(name: string, email: string, password: string) {
     try {
-      const serverResponse = (await axios.post(`${process.env.HEROKU_ECOMMERCE_API}/user/register/`, {name, email, password})).status;
+      const serverResponse = (await axios.post(`https://almirjnr-e-commerce-api.herokuapp.com/api/v1/user/register/`, {name, email, password})).status;
 
       return serverResponse === 201;
     }
@@ -22,7 +22,7 @@ export class ApiUserService {
   }
 
   async doUserLogin(email: string, password: string) {
-    const serverResponse = (await axios.post(`${process.env.HEROKU_ECOMMERCE_API}/user/login/`, {email, password}));
+    const serverResponse = (await axios.post(`https://almirjnr-e-commerce-api.herokuapp.com/api/v1/user/login/`, {email, password}));
 
     if ((serverResponse.status) === 200) {
       return serverResponse.data;

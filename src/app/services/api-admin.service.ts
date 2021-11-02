@@ -11,9 +11,9 @@ export class ApiAdminService {
   constructor() { }
 
   async getAllUsers() {
-    return (await axios.get(`${process.env.HEROKU_ECOMMERCE_API}/admin/allUsers`)).data;
+    return (await axios.get(`https://almirjnr-e-commerce-api.herokuapp.com/api/v1/admin/allUsers`)).data;
   }
   async getUserByEmail(email: string) {
-    return (await axios.get(`${process.env.HEROKU_ECOMMERCE_API}/admin/${email}`)).data;
+    return (await axios.get(`https://almirjnr-e-commerce-api.herokuapp.com/api/v1/admin/${email}`)).data;
   }
 }

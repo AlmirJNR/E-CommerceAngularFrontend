@@ -11,10 +11,10 @@ export class ApiPhysicalProductService {
   constructor() { }
 
   async getAllProducts (page: number = 1, itemsPerPage: number = 5) {
-    return (await axios.get<any[]>(`${process.env.HEROKU_ECOMMERCE_API}/physicalProduct/allProducts?page=${page}&itemsPerPage=${itemsPerPage}`)).data;
+    return (await axios.get<any[]>(`https://almirjnr-e-commerce-api.herokuapp.com/api/v1/physicalProduct/allProducts?page=${page}&itemsPerPage=${itemsPerPage}`)).data;
   }
 
   async getProductByName (physicalProductName: string) {
-    return (await axios.get(`${process.env.HEROKU_ECOMMERCE_API}/physicalProduct/byName/${physicalProductName}`)).data;
+    return (await axios.get(`https://almirjnr-e-commerce-api.herokuapp.com/api/v1/physicalProduct/byName/${physicalProductName}`)).data;
   }
 }
