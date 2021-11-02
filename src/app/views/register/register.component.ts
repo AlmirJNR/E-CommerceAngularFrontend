@@ -38,33 +38,31 @@ export class RegisterComponent {
   }
 
   async registerUser() {
-    try {
-      const registerResponse = await this.userService.setNewUser(
-        this.registerUserForm.value.userName,
-        this.registerUserForm.value.userEmail,
-        this.registerUserForm.value.userPassword
-      );
-      if (registerResponse) {
-        Swal.fire({
-          title: `Olá ${this.registerUserForm.value.userName}`,
-          text: 'Você foi cadastrado com sucesso!',
-          icon: 'success',
-          confirmButtonText: 'Continuar',
-          confirmButtonColor: '#00800080',
-          allowOutsideClick: false,
-          allowEscapeKey: false,
-        }).then((result) => {
-          if (result.value) {
-            location.href = "/login";
-          }
-        });
-      }
-
-    } catch (error) {
+    const registerResponse = await this.userService.setNewUser(
+      this.registerUserForm.value.userName,
+      this.registerUserForm.value.userEmail,
+      this.registerUserForm.value.userPassword
+    );
+    if (registerResponse) {
+      Swal.fire({
+        title: `Olá ${this.registerUserForm.value.userName}`,
+        text: 'Você foi cadastrado com sucesso!',
+        icon: 'success',
+        confirmButtonText: 'Continuar',
+        confirmButtonColor: '#00800080',
+        allowOutsideClick: false,
+        allowEscapeKey: false,
+      }).then((result) => {
+        if (result.value) {
+          location.href = "/login";
+        }
+      });
+    }
+    else {
       Swal.fire({
         title: `${this.registerUserForm.value.userEmail}`,
-        text: 'Este email já consta em nosso banco de dados',
-        icon: 'warning',
+        text: 'Ocorreu um erro ao registrar',
+        icon: 'error',
         showCancelButton: true,
         cancelButtonText: 'Sair',
         cancelButtonColor: '#80000080',
