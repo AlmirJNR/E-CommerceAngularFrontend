@@ -46,6 +46,26 @@
         }
       }
     }
+
+    .registerTextButton {
+      padding-bottom: 0.5rem;
+      text-decoration: none;
+      background-image: linear-gradient(90deg, white, black);
+      background-size: 0% 3px;
+      background-repeat: no-repeat;
+      background-position: bottom left;
+      transition: background-size 250ms;
+      color: black;
+      &:hover {
+        overflow: visible;
+        background-image: linear-gradient(90deg, white, black);
+        background-size: 100% 3px;
+        background-repeat: no-repeat;
+        background-position: bottom left;
+        color: rgb(120, 140, 0);
+        transition: background-size 250ms;
+      }
+    }
   }
 
   .container-button {
